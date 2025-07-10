@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00ffff;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffff;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    input, textarea {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ccc;
+    }
+
+    button {
+      background: #00ffff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00cccc;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Give Us Your Feedback</h2>
+    <form id="feedbackForm" action="submit_feedback.php" method="POST" onsubmit="return validateForm()">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Feedback" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      const email = document.querySelector('input[name="email"]').value;
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>

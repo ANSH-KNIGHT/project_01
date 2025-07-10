@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KNIGHTS HACK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background: #0f2027;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    canvas#bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+      border-radius: 50%;
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    h2#typing-text {
+      font-size: 28px;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #00ffff;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-buttons a {
+      color: #00ffff;
+      border: 1px solid #00ffff;
+      padding: 10px 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .nav-buttons a:hover {
+      background: #00ffff;
+      color: black;
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 50px;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .category {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #00ffff;
+      border-radius: 20px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+    }
+
+    .category:hover {
+      background: #00ffff;
+      color: black;
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    .poll-container {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .poll-container select, .poll-container button {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .poll-container button {
+      background-color: #00ffff;
+      color: #000;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 14px;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 250px; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ffff; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<div class="header">
+  <div class="logo-container">
+    <img src="knight.png" alt="Knight Logo" class="logo">
+    <h2 id="typing-text"></h2>
+  </div>
+  <div class="nav-buttons">
+    <a href="#about">About</a>
+    <a href="feedback.html">Feedback</a>
+  </div>
+</div>
+
+<div class="categories">
+  <a href="movies.html" class="category">Movies</a>
+  <a href="television.html" class="category">Television</a>
+  <a href="games.html" class="category">Games</a>
+  <a href="music.html" class="category">Music</a>
+  <a href="applications.html" class="category">Applications</a>
+  <a href="anime.html" class="category">Anime</a>
+  <a href="documentaries.html" class="category">Documentaries</a>
+  <a href="other.html" class="category">Other</a>
+</div>
+
+<div class="poll-container" id="feedback">
+  <form action="submit_vote.php" method="POST">
+    <label for="vote">What content should we upload next?</label><br><br>
+    <select name="vote" required>
+      <option value="Movies">Movies</option>
+      <option value="Games">Games</option>
+      <option value="Music">Music</option>
+      <option value="Anime">Anime</option>
+      <option value="Apps">Applications</option>
+    </select><br><br>
+    <button type="submit">Vote</button>
+  </form>
+</div>
+
+<footer>
+  <p>Follow us on Telegram: <a href="https://t.me/KNIGHT9999hacks" target="_blank" style="color: #00ffff;">KNIGHT9999hacks</a></p>
+  <p style="font-family: 'Orbitron', sans-serif; font-size: 16px;">&copy; 2025 Knights Hack. All rights reserved.</p>
+</footer>
+
+<script>
+  const text = "KNIGHTS HACK";
+  let i = 0;
+  const speed = 100;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter();
+
+  // Glowing star-like particles background
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  let w, h;
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+
+  function createStars(count) {
+    stars = [];
+    for (let i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        radius: Math.random() * 1.5,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+  }
+
+  function animateStars() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = '#00ffff';
+    stars.forEach(star => {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fill();
+      star.x += star.dx;
+      star.y += star.dy;
+
+      if (star.x < 0 || star.x > w) star.dx *= -1;
+      if (star.y < 0 || star.y > h) star.dy *= -1;
+    });
+    requestAnimationFrame(animateStars);
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    createStars(100);
+  });
+
+  resize();
+  createStars(100);
+  animateStars();kf
+</script>
+</body>
+</html>

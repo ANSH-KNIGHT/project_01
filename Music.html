@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #0d0d0d;
+      font-family: 'Audiowide', cursive;
+      color: #00ffcc;
+      overflow-x: hidden;
+    }
+
+    .music-section {
+      position: relative;
+      padding: 60px 20px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .music-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    .music-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .music-card {
+      background: #111;
+      border: 2px solid #00ffcc;
+      border-radius: 12px;
+      width: 220px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .music-card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background-color: #000;
+    }
+
+    .music-card p {
+      margin: 0;
+      padding: 15px;
+      color: #fff;
+      background-color: #000;
+      text-shadow: 0 0 5px #00ffcc;
+    }
+
+    .music-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    .strings-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .string {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, #00ffcc, transparent);
+      opacity: 0.3;
+      animation: vibrate 1s infinite ease-in-out;
+    }
+
+    @keyframes vibrate {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(2px); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="strings-bg" id="strings-bg"></div>
+
+<section id="music" class="music-section">
+  <h2>🎵 Music Collection</h2>
+  <div class="music-container">
+    <div class="music-card">
+      <img src="shape ofyou.jpg" alt="Track 1">
+      <p>Track Title 1</p>
+    </div>
+    <div class="music-card">
+      <img src="despacito.jpg" alt="Track 2">
+      <p>Track Title 2</p>
+    </div>
+    <div class="music-card">
+      <img src="peaches.jpg" alt="Track 3">
+      <p>Track Title 3</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const container = document.getElementById('strings-bg');
+  for (let i = 0; i < 30; i++) {
+    const string = document.createElement('div');
+    string.className = 'string';
+    string.style.left = `${Math.random() * 100}%`;
+    string.style.animationDuration = `${0.5 + Math.random() * 1.5}s`;
+    container.appendChild(string);
+  }
+</script>
+
+</body>
+</html>

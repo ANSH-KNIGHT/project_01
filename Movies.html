@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNIGHTS HACK - Movies</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Text:wght@400;600&family=Segoe+UI:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(45deg, #FF6B6B, #F9844A, #F9C74F, #90BE6D, #43AA8B, #4D908E, #577590, #277DA1);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            min-height: 100vh; /* Ensure full viewport height */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .movie-intro {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #555;
+            padding: 40px;
+            margin: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 800px;
+            backdrop-filter: blur(10px); /* Apply a blur effect */
+        }
+
+        .intro-heading {
+            font-family: 'Playfair Display', serif;
+            color: #e44d26;
+            font-size: 3em;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .intro-paragraph {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .intro-heading:hover {
+            color: #ff6f3d;
+            cursor: default;
+        }
+
+        /* Movie Listing Styles */
+        .movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .movie-item {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .movie-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .movie-item img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            display: block; /* Removes extra space below image */
+            transition: transform 0.3s ease; /* Add transition for smooth effect */
+        }
+
+        .movie-item:hover img {
+            transform: scale(1.1); /* Make the image slightly larger on hover */
+        }
+
+        .movie-item h3 {
+            font-size: 1.3em;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .text-wrapper {
+            position: relative; /* For positioning the button if needed */
+            padding: 0 10px 10px; /* Add some padding around the text and buttons */
+        }
+
+        .initial-text {
+            position: relative;
+            overflow: hidden;
+            max-height: 80px; /* Adjust this value to control how much initial text is shown */
+            margin-bottom: 5px; /* Add some space before the buttons */
+        }
+
+        .fade-out {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8) 50%); /* Match movie-item background */
+            padding: 0 10px;
+        }
+
+        .full-text {
+            display: none;
+            margin-bottom: 5px;
+        }
+
+        .read-more-button, .read-less-button {
+            background: none;
+            border: none;
+            color: blue;
+            cursor: pointer;
+            padding: 5px 0;
+            font-size: 1em;
+            margin-right: 10px; /* Add some spacing between buttons if both are visible */
+        }
+
+        .read-more-button:hover, .read-less-button:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="movie-intro">
+        <h1 class="intro-heading">Welcome to the Vibrant World of KNIGHTS HACK Movies!</h1>
+        <p class="intro-paragraph">
+            Step into a kaleidoscope of cinematic experiences at KNIGHTS HACK! Our virtual theater is alive with color and brimming with a spectacular selection of films from the heart of Hollywood to the vibrant streets of Bollywood, and beyond. Discover the magic of new releases, the comfort of timeless classics, and the excitement of diverse genres, all presented within an engaging and visually dynamic environment. Prepare to be captivated, entertained, and inspired as you explore our curated collection. Your next unforgettable movie adventure starts now at KNIGHTS HACK!
+        </p>
+    </div>
+   <div> <pre><h1>                MUST WATCH !!!            </h1></pre></div>
+    <div class="movie-list">
+        <div class="movie-item">
+            <img src="INTERSTELLAR.jpG" alt="Movie 1 Poster">
+            <h3>INTERSTELLAR</h3>
+            <div class="text-wrapper">
+                <div class="initial-text">
+                    Interstellar is a 2014 epic science fiction film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan. It features an ensemble cast led by Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn, and Michael Caine. Set in a dystopian future where Earth is suffering from catastrophic blight and famine, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for mankind.
+                    <span class="fade-out">...</span>
+                </div>
+                <div class="full-text hidden">
+                    Interstellar is a 2014 epic science fiction film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan. It features an ensemble cast led by Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn, and Michael Caine. Set in a dystopian future where Earth is suffering from catastrophic blight and famine, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for mankind.
+                </div>
+                <button class="read-more-button">Read More</button>
+                <button class="read-less-button hidden">Read Less</button>
+            </div>
+        </div>
+        <div class="movie-item">
+             <img src="shawshank_redemption.jpg" alt="Movie 2 Poster">
+            <h3>SHAWSHANK REDEMPTION</h3>
+            <div class="text-wrapper">
+                <div class="initial-text">
+                    The Shawshank Redemption is a 1994 American prison drama film written and directed by Frank Darabont, based on the 1982 Stephen King novella Rita Hayworth and Shawshank Redemption. The film tells the story of banker Andy Dufresne (Tim Robbins), who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence.
+                    <span class="fade-out">...</span>
+                </div>
+                <div class="full-text hidden">
+                    The Shawshank Redemption is a 1994 American prison drama film written and directed by Frank Darabont, based on the 1982 Stephen King novella Rita Hayworth and Shawshank Redemption. The film tells the story of banker Andy Dufresne (Tim Robbins), who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence. Over the following two decades, he befriends a fellow prisoner, contraband smuggler Ellis "Red" Redding (Morgan Freeman), and becomes instrumental in a money laundering operation led by the prison warden Samuel Norton (Bob Gunton). William Sadler, Clancy Brown, Gil Bellows, and James Whitmore appear in supporting roles.
+                </div>
+                <button class="read-more-button">Read More</button>
+                <button class="read-less-button hidden">Read Less</button>
+            </div>
+        </div>
+        <div class="movie-item">
+             <img src="logan.jpg" alt="Movie 3 Poster">
+            <h3>LOGAN</h3>
+            <div class="text-wrapper">
+                <div class="initial-text">
+                    Logan is a 2017 American superhero film based on the Marvel Comics character Wolverine. Directed by James Mangold, who co-wrote the screenplay with Michael Green and Scott Frank from a story by Mangold, it is the tenth film in the X-Men film series, the third and final installment in the Wolverine trilogy.
+                    <span class="fade-out">...</span>
+                </div>
+                <div class="full-text hidden">
+                    Logan is a 2017 American superhero film based on the Marvel Comics character Wolverine. Directed by James Mangold, who co-wrote the screenplay with Michael Green and Scott Frank from a story by Mangold, it is the tenth film in the X-Men film series, the third and final installment in the Wolverine trilogy, following X-Men Origins: Wolverine (2009) and The Wolverine (2013), and a standalone sequel to X-Men: Days of Future Past (2014). The film stars Hugh Jackman in the main role, alongside Patrick Stewart, Richard E. Grant, Boyd Holbrook, Stephen Merchant, and Dafne Keen (in her film debut) in supporting roles. The film, which takes inspiration from the "Old Man Logan" comics storyline by Mark Millar and Steve McNiven, follows an aged Wolverine and an extremely ill Charles Xavier who must defend a young mutant named Laura from the Reavers led by Donald Pierce and Zander Rice.
+                </div>
+                <button class="read-more-button">Read More</button>
+                <button class="read-less-button hidden">Read Less</button>
+            </div>
+        </div>
+        </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const movieItems = document.querySelectorAll('.movie-item');
+
+            movieItems.forEach(item => {
+                const initialText = item.querySelector('.initial-text');
+                const fullText = item.querySelector('.full-text');
+                const readMoreButton = item.querySelector('.read-more-button');
+                const readLessButton = item.querySelector('.read-less-button');
+                const fadeOut = item.querySelector('.fade-out');
+
+                if (initialText && fullText && readMoreButton && readLessButton && fadeOut) {
+                    readMoreButton.addEventListener('click', function() {
+                        initialText.style.display = 'none';
+                        fadeOut.style.display = 'none';
+                        fullText.style.display = 'block';
+                        readMoreButton.classList.add('hidden');
+                        readLessButton.classList.remove('hidden');
+                    });
+
+                    readLessButton.addEventListener('click', function() {
+                        initialText.style.display = 'block';
+                        fadeOut.style.display = 'block';
+                        fullText.style.display = 'none';
+                        readMoreButton.classList.remove('hidden');
+                        readLessButton.classList.add('hidden');
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
